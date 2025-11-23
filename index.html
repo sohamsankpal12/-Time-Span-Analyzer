@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Difference Calculator</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="time.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-4xl bg-white card rounded-xl p-8 space-y-8">
+        <h1 class="text-3xl font-extrabold text-gray-900 text-center">
+            Time Span Analyzer
+        </h1>
+
+        <p class="text-center text-gray-500 mb-8">
+            Calculate the days, weeks, weekdays, and weekends between any two dates.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-6 p-6 bg-indigo-50 rounded-lg">
+            <div class="flex-1">
+                <label for="startDate" class="block text-sm font-medium text-gray-700 mb-2">
+                    Start Date
+                </label>
+                <input type="date" id="startDate" class="w-full text-lg focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <div class="flex-1">
+                <label for="endDate" class="block text-sm font-medium text-gray-700 mb-2">
+                    End Date
+                </label>
+                <input type="date" id="endDate" class="w-full text-lg focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+        </div>
+
+        <div id="errorMessage"
+            class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+            <span id="errorText"></span>
+        </div>
+
+        <div id="resultsContainer" class="hidden">
+            <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2 mb-6">Results</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="result-item text-center">
+                    <div id="totalDays" class="text-4xl font-bold text-indigo-600">0</div>
+                    <div class="text-sm font-medium text-gray-500 mt-1">Total Days</div>
+                </div>
+
+                <div class="result-item text-center">
+                    <div id="totalWeeks" class="text-4xl font-bold text-indigo-600">0</div>
+                    <div class="text-sm font-medium text-gray-500 mt-1">Total Weeks</div>
+                </div>
+
+                <div class="result-item text-center">
+                    <div id="weekdays" class="text-4xl font-bold text-green-600">0</div>
+                    <div class="text-sm font-medium text-gray-500 mt-1">Weekdays</div>
+                </div>
+
+                <div class="result-item text-center">
+                    <div id="weekends" class="text-4xl font-bold text-red-600">0</div>
+                    <div class="text-sm font-medium text-gray-500 mt-1">Weekends</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="time.js"></script>
+</body>
+</html>
